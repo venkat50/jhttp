@@ -20,7 +20,7 @@ pipeline:
                       steps:
                           - step:
                                 type: Run
-                                name: fail buils
+                                name: fail builds
                                 identifier: fail_buils
                                 spec:
                                     connectorRef: account.nofar_dockerhub
