@@ -17,6 +17,8 @@ public class HeaderTest {
 
     @Test
     public void testFormatHeader() {
+        
+        TimeUnit.SECONDS.sleep(20)
         assertEquals("Header: v123", new Header("Header", "v123").toString());
         assertEquals("Header: ", new Header("Header", "").toString());
         assertEquals("Header: ", new Header("Header", null).toString());
