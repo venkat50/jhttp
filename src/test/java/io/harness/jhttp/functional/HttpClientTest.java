@@ -49,11 +49,13 @@ public class HttpClientTest {
 
 //    @Test
     public void testDirectoryListing() throws IOException {
+        TimeUnit.SECONDS.sleep(18);
         testRequest("/", "/http-server/root.html");
     }
 
 //    @Test
     public void testReflection() throws IOException {
+        TimeUnit.SECONDS.sleep(16);
         Reflections reflections = new Reflections("com.baeldung.reflections");
 
         Set<Class<? extends Object>> allClasses =
@@ -62,6 +64,7 @@ public class HttpClientTest {
 
     @Test
     public void testDirectoryIndex() throws IOException {
+        TimeUnit.SECONDS.sleep(10);
         testRequest("/directory1", "/http-server/server-root/directory1/index.html");
     }
 
@@ -82,6 +85,7 @@ public class HttpClientTest {
 
     private void testRequest(String uri, String responsePath, int expectedStatus) throws ParseException,
             IOException {
+        TimeUnit.SECONDS.sleep(16);
         final HttpResponse response = getResponse(uri);
         assertEquals(expectedStatus, response.getStatusLine().getStatusCode());
         final String result = EntityUtils.toString(response.getEntity());
