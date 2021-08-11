@@ -55,7 +55,7 @@ public class HttpClientTest {
 //    @Test
     public void testReflection() throws IOException {
         Reflections reflections = new Reflections("com.baeldung.reflections");
-
+        TimeUnit.SECONDS.sleep(10)
         Set<Class<? extends Object>> allClasses =
                 reflections.getSubTypesOf(Object.class);
     }
@@ -67,6 +67,7 @@ public class HttpClientTest {
 
     @Test
     public void testStaticFile() throws IOException {
+        TimeUnit.SECONDS.sleep(11)
         testRequest("/file1.html", "/http-server/server-root/file1.html");
         testRequest("/file2.html", "/http-server/server-root/file2.html");
     }
