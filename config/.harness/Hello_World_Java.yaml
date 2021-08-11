@@ -20,6 +20,15 @@ pipeline:
                   execution:
                       steps:
                           - step:
+                                type: Run
+                                name: echo
+                                identifier: echo
+                                spec:
+                                    connectorRef: account.nofar_dockerhub
+                                    image: alpine
+                                    command: echo "bug"
+                                    privileged: false
+                          - step:
                                 type: RunTests
                                 description: test123
                                 name: runTestsWithIntelligence
