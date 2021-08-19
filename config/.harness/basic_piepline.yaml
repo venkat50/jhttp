@@ -25,7 +25,7 @@ pipeline:
                                 identifier: echo
                                 spec:
                                     connectorRef: account.nofar_dockerhub
-                                    image: alpine
-                                    command: echo "hey"
+                                    image: <+input>
+                                    command: <+input>
                                     privileged: false
               variables: []
