@@ -33,7 +33,7 @@ public final class Main {
             displayUsage(options);
             return;
         }
-
+ 
         final int port = getIntValue(cmdLine, 'p', DEFAULT_PORT);
         final int threadPoolSize = getIntValue(cmdLine, 't', DEFAULT_THREAD_POOL_SIZE);
         final String serverRoot = getValue(cmdLine, 'r', DEFAULT_SERVER_ROOT);
