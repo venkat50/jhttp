@@ -25,15 +25,15 @@ pipeline:
                           - step:
                                 type: RunTests
                                 description: run unit tests
-                                name: runTestsWithIntelligence
+                                name: runTestsWithIntelligence-rename
                                 identifier: runTestsWithIntelligence
                                 timeout: 20m
                                 spec:
                                     connectorRef: account.nofar_dockerhub
                                     image: maven:3.5.2-jdk-8-alpine
-                                    args: test
-                                    buildTool: Maven
                                     language: Java
+                                    buildTool: Maven
+                                    args: test
                                     packages: io.harness.
                                     runOnlySelectedTests: true
                                     postCommand: mvn package -DskipTests
