@@ -1,0 +1,37 @@
+pipeline:
+    name: P2
+    identifier: P2
+    projectIdentifier: pranay_CaC
+    orgIdentifier: default
+    tags: {}
+    properties:
+        ci:
+            codebase:
+                connectorRef: account.Nofar_bitbucket_cloud
+                repoName: drgedtr
+                build: <+input>
+    stages:
+        - stage:
+              name: wefsdf
+              identifier: wefsdf
+              description: ""
+              type: CI
+              spec:
+                  cloneCodebase: true
+                  infrastructure:
+                      type: KubernetesDirect
+                      spec:
+                          connectorRef: account.k8scluster
+                          namespace: ert
+                  execution:
+                      steps:
+                          - step:
+                                type: Run
+                                name: ertert
+                                identifier: ertert
+                                spec:
+                                    connectorRef: account.nofar_dockerhub
+                                    image: ert
+                                    command: ert
+                                    privileged: false
+              variables: []
