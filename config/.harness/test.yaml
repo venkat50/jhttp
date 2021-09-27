@@ -1,0 +1,31 @@
+pipeline:
+    name: test
+    identifier: test
+    projectIdentifier: Product_Demos_CIE
+    orgIdentifier: default
+    tags: {}
+    stages:
+        - stage:
+              name: dddd
+              identifier: dddd
+              description: ""
+              type: CI
+              spec:
+                  cloneCodebase: false
+                  infrastructure:
+                      type: KubernetesDirect
+                      spec:
+                          connectorRef: account.k8scluster
+                          namespace: aaa
+                  execution:
+                      steps:
+                          - step:
+                                type: Run
+                                name: asd
+                                identifier: asd
+                                spec:
+                                    connectorRef: account.nofar_dockerhub
+                                    image: asd
+                                    command: asd
+                                    privileged: false
+              variables: []
