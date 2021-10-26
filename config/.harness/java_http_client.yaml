@@ -55,6 +55,15 @@ pipeline:
                                     tags:
                                         - <+pipeline.sequenceId>
                                     optimize: true
+                          - step:
+                                type: Run
+                                name: AAA
+                                identifier: AAA
+                                spec:
+                                    connectorRef: account.nofar_dockerhub
+                                    image: "maven "
+                                    command: aaa
+                                    privileged: false
                   infrastructure:
                       type: KubernetesDirect
                       spec:
