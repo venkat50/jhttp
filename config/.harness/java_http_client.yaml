@@ -44,8 +44,8 @@ pipeline:
                                                 - "**/*.xml"
                                     resources:
                                         limits:
-                                            memory: 2500Mi
-                                            cpu: "0.5"
+                                            memory: 5000Mi
+                                            cpu: "2"
                           - step:
                                 type: BuildAndPushDockerRegistry
                                 name: Build and push image to DockerHub
