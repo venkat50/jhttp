@@ -31,9 +31,9 @@ pipeline:
                                 spec:
                                     connectorRef: account.nofar_dockerhub
                                     image: maven:3.5.2-jdk-8-alpine
-                                    args: test
-                                    buildTool: Maven
                                     language: Java
+                                    buildTool: Maven
+                                    args: test
                                     packages: io.harness.
                                     runOnlySelectedTests: true
                                     postCommand: mvn package -DskipTests
@@ -44,7 +44,8 @@ pipeline:
                                                 - "**/*.xml"
                                     resources:
                                         limits:
-                                            memory: 1000Mi
+                                            memory: 2500Mi
+                                            cpu: "0.5"
                           - step:
                                 type: BuildAndPushDockerRegistry
                                 name: Build and push image to DockerHub
@@ -55,15 +56,6 @@ pipeline:
                                     tags:
                                         - <+pipeline.sequenceId>
                                     optimize: true
-                          - step:
-                                type: Run
-                                name: "show programming language "
-                                identifier: show_programming_language
-                                spec:
-                                    connectorRef: account.nofar_dockerhub
-                                    image: alpine
-                                    command: aaaaa
-                                    privileged: false
                   infrastructure:
                       type: KubernetesDirect
                       spec:
