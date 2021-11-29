@@ -28,4 +28,8 @@ pipeline:
                                     image: alpine
                                     command: echo "hey"
                                     privileged: false
+                                when:
+                                    stageStatus: Success
+                                    condition: <+codebase.build.type> == "PR"
+                                failureStrategies: []
               variables: []
