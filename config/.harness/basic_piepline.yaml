@@ -8,10 +8,9 @@ pipeline:
         - stage:
               name: basic
               identifier: basic
-              description: ""
               type: CI
               spec:
-                  cloneCodebase: false
+                  cloneCodebase: true
                   infrastructure:
                       type: KubernetesDirect
                       spec:
@@ -32,4 +31,8 @@ pipeline:
                                     stageStatus: Success
                                     condition: <+codebase.build.type> == "PR"
                                 failureStrategies: []
-              variables: []
+    properties:
+        ci:
+            codebase:
+                connectorRef: account.Keen_jhttp
+                build: <+input>
