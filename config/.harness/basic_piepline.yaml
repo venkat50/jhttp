@@ -29,8 +29,9 @@ pipeline:
                                     privileged: false
                                 when:
                                     stageStatus: Success
-                                    condition: <+codebase.build.type> == "PR"
+                                    condition: <+codebase.branch> == "whatever"
                                 failureStrategies: []
+              variables: []
     properties:
         ci:
             codebase:
