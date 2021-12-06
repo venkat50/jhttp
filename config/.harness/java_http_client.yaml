@@ -97,7 +97,4 @@ pipeline:
                       - ""
               description: running integ tests
               variables: []
-    variables:
-        - name: pipelineVar
-          type: String
-          value: <+input>
+    variables: []
