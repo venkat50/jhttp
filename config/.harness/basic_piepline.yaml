@@ -29,7 +29,7 @@ pipeline:
                                     privileged: false
                                 when:
                                     stageStatus: Success
-                                    condition: <+codebase.branch> == "whatever"
+                                    condition: <+codebase.tag> == "whatever"
                                 failureStrategies: []
               variables: []
     properties:
