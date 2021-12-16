@@ -1,0 +1,16 @@
+template:
+    name: Run one load test
+    identifier: Run_one_load_test
+    versionLabel: v1.0
+    type: Step
+    projectIdentifier: Product_Demos_CIE
+    orgIdentifier: default
+    description: null
+    tags: {}
+    spec:
+        type: Run
+        spec:
+            connectorRef: account.nofar_dockerhub
+            image: alpine
+            command: echo "test"
+            privileged: false
