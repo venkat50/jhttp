@@ -1,0 +1,31 @@
+pipeline:
+    name: test long branch names
+    identifier: test_long_branch_names
+    projectIdentifier: nofar_test_12_15_21
+    orgIdentifier: default
+    tags: {}
+    stages:
+        - stage:
+              name: dsdd
+              identifier: dsdd
+              description: ""
+              type: CI
+              spec:
+                  cloneCodebase: false
+                  infrastructure:
+                      type: KubernetesDirect
+                      spec:
+                          connectorRef: account.arpitconn
+                          namespace: asd
+                  execution:
+                      steps:
+                          - step:
+                                type: Run
+                                name: asd
+                                identifier: asd
+                                spec:
+                                    connectorRef: account.testSecret
+                                    image: ad
+                                    command: asd
+                                    privileged: false
+              variables: []
