@@ -26,6 +26,6 @@ pipeline:
                                 spec:
                                     connectorRef: account.testSecret
                                     image: ad
-                                    command: asd
+                                    command: asdvvv
                                     privileged: false
               variables: []
