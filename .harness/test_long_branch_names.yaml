@@ -23,6 +23,7 @@ pipeline:
                                 type: Run
                                 name: asd
                                 identifier: asd
+                                timeout: 20h
                                 spec:
                                     connectorRef: account.testSecret
                                     image: ad
