@@ -32,6 +32,7 @@ pipeline:
                                           stageStatus: Success
                                           condition: <+codebase.tag> == "null"
                                       failureStrategies: []
+                    variables: []
               - stage:
                     name: basic2
                     identifier: basic2
