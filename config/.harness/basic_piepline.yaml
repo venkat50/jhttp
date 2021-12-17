@@ -38,7 +38,7 @@ pipeline:
                     identifier: basic2
                     type: CI
                     spec:
-                        cloneCodebase: true
+                        cloneCodebase: false
                         infrastructure:
                             type: KubernetesDirect
                             spec:
@@ -59,7 +59,6 @@ pipeline:
                                           stageStatus: Success
                                           condition: <+codebase.tag> == "null"
                                       failureStrategies: []
-                    variables: []
     properties:
         ci:
             codebase:
