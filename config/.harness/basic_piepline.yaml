@@ -56,7 +56,7 @@ pipeline:
                                     privileged: false
                                 when:
                                     stageStatus: Success
-                                    condition: <+codebase.tag> == "null" & <trigger.sourceBranch> == "null"
+                                    condition: <trigger.sourceBranch> == "null"
                                 failureStrategies: []
               variables: []
     properties:
