@@ -29,7 +29,7 @@ pipeline:
                                     privileged: false
                                 when:
                                     stageStatus: Success
-                                    condition: <+codebase.tag> == "null"
+                                    condition: <+trigger.sourceBranch> == "null"
                                 failureStrategies: []
               variables: []
         - stage:
