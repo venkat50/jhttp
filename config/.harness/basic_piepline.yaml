@@ -25,7 +25,7 @@ pipeline:
                                 spec:
                                     connectorRef: account.nofar_dockerhub
                                     image: alpine
-                                    command: echo "hey"
+                                    command: echo "<+codebase.sourceBranch>"
                                     privileged: false
                                 when:
                                     stageStatus: Success
