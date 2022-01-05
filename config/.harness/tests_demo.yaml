@@ -1,0 +1,45 @@
+pipeline:
+    name: tests demo
+    identifier: tests_demo
+    projectIdentifier: Product_Demos_CIE
+    orgIdentifier: default
+    tags: {}
+    stages:
+        - stage:
+              name: stage
+              identifier: stage
+              type: CI
+              spec:
+                  cloneCodebase: false
+                  infrastructure:
+                      type: KubernetesDirect
+                      spec:
+                          connectorRef: account.k8scluster
+                          namespace: whatever
+                  execution:
+                      steps:
+                          - parallel:
+                                - step:
+                                      name: test1
+                                      identifier: test1
+                                      template:
+                                          templateRef: Run_one_load_test
+                                          versionLabel: v1.0
+                                - step:
+                                      name: test4
+                                      identifier: test4
+                                      template:
+                                          templateRef: Run_one_load_test
+                                          versionLabel: v1.0
+                                - step:
+                                      name: test2
+                                      identifier: test2
+                                      template:
+                                          templateRef: Run_one_load_test
+                                          versionLabel: v1.0
+                                - step:
+                                      name: test3
+                                      identifier: test3
+                                      template:
+                                          templateRef: Run_one_load_test
+                                          versionLabel: v1.0
