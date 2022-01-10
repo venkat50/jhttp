@@ -64,7 +64,6 @@ pipeline:
                                             exit-code: "1"
                                             ignore-unfixed: true
                                             vuln-type: os,library
-                                            severity: LOW,MEDIUM,CRITICAL,HIGH
                           - step:
                                 type: Run
                                 name: see local images
