@@ -48,6 +48,15 @@ pipeline:
                                     tags:
                                         - latest
                                     optimize: true
+                          - step:
+                                type: Run
+                                name: see local images
+                                identifier: see_local_images
+                                spec:
+                                    connectorRef: account.nofar_dockerhub
+                                    image: docker:dind
+                                    command: docker images
+                                    privileged: true
                   infrastructure:
                       type: KubernetesDirect
                       spec:
