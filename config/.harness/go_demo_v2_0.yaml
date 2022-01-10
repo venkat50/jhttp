@@ -71,7 +71,7 @@ pipeline:
                                 identifier: see_local_images
                                 spec:
                                     connectorRef: account.nofar_dockerhub
-                                    image: docker:dind
+                                    image: docker
                                     command: docker images
                                     privileged: true
                   infrastructure:
