@@ -86,6 +86,8 @@ pipeline:
                         spec:
                             connectorRef: account.nofar_dockerhub
                             image: docker:dind
+                  sharedPaths:
+                      - /var/run
               variables:
                   - name: PLUGIN_NO_PUSH
                     type: String
