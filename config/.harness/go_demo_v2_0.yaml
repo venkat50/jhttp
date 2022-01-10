@@ -86,6 +86,7 @@ pipeline:
                         spec:
                             connectorRef: account.nofar_dockerhub
                             image: docker:dind
+                            privileged: true
                   sharedPaths:
                       - /var/run
               variables:
