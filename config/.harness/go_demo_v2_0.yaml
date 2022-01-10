@@ -57,6 +57,17 @@ pipeline:
                                     image: docker:dind
                                     command: docker images
                                     privileged: true
+                          - step:
+                                type: Plugin
+                                name: scan container
+                                identifier: scan_container
+                                spec:
+                                    connectorRef: account.nofar_dockerhub
+                                    image: plugins/github-actions
+                                    privileged: true
+                                    settings:
+                                        uses: aquasecurity/trivy-action@master
+                                        with: data
                   infrastructure:
                       type: KubernetesDirect
                       spec:
