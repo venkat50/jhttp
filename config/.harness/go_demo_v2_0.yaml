@@ -15,27 +15,6 @@ pipeline:
                       steps:
                           - step:
                                 type: Run
-                                name: Run Unit Tests
-                                identifier: Run_Unit_Tests
-                                spec:
-                                    connectorRef: account.nofar_dockerhub
-                                    image: golang:1.15
-                                    command: |-
-                                        set +e
-                                        go get gotest.tools/gotestsum
-                                        gotestsum --format=standard-verbose --junitfile unit-tests.xml
-                                        exit 0
-                                    privileged: false
-                                    reports:
-                                        type: JUnit
-                                        spec:
-                                            paths:
-                                                - "*.xml"
-                                when:
-                                    stageStatus: Success
-                                failureStrategies: []
-                          - step:
-                                type: Run
                                 name: Go Build
                                 identifier: Go_Build
                                 spec:
