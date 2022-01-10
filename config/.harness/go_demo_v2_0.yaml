@@ -49,15 +49,6 @@ pipeline:
                                         - latest
                                     optimize: true
                           - step:
-                                type: Run
-                                name: see local images
-                                identifier: see_local_images
-                                spec:
-                                    connectorRef: account.nofar_dockerhub
-                                    image: docker:dind
-                                    command: docker images
-                                    privileged: true
-                          - step:
                                 type: Plugin
                                 name: scan container
                                 identifier: scan_container
@@ -74,6 +65,15 @@ pipeline:
                                             ignore-unfixed: true
                                             vuln-type: os,library
                                             severity: CRITICAL,HIGH
+                          - step:
+                                type: Run
+                                name: see local images
+                                identifier: see_local_images
+                                spec:
+                                    connectorRef: account.nofar_dockerhub
+                                    image: docker:dind
+                                    command: docker images
+                                    privileged: true
                   infrastructure:
                       type: KubernetesDirect
                       spec:
