@@ -67,7 +67,13 @@ pipeline:
                                     privileged: true
                                     settings:
                                         uses: aquasecurity/trivy-action@master
-                                        with: data
+                                        with:
+                                            image-ref: bluebbb/godemo:latest
+                                            format: table
+                                            exit-code: "1"
+                                            ignore-unfixed: true
+                                            vuln-type: os,library
+                                            severity: CRITICAL,HIGH
                   infrastructure:
                       type: KubernetesDirect
                       spec:
