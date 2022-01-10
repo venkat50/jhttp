@@ -81,6 +81,13 @@ pipeline:
                           namespace: harness-delegate-pmdemo
                   sharedPaths:
                       - /var/run
+                  serviceDependencies:
+                      - identifier: DIND_service
+                        name: DIND service
+                        type: Service
+                        spec:
+                            connectorRef: account.nofar_dockerhub
+                            image: docker:dind
               variables:
                   - name: PLUGIN_NO_PUSH
                     type: String
