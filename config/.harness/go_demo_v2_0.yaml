@@ -74,12 +74,10 @@ pipeline:
                       spec:
                           connectorRef: account.k8scluster
                           namespace: harness-delegate-pmdemo
-                  sharedPaths:
-                      - ""
               variables:
-                  - name: myStageVar
+                  - name: PLUGIN_NO_PUSH
                     type: String
-                    value: stageVarValue
+                    value: "true"
         - stage:
               name: Run Integration Test
               identifier: Run_Integration_Test
