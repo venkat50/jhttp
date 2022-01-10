@@ -79,6 +79,8 @@ pipeline:
                       spec:
                           connectorRef: account.k8scluster
                           namespace: harness-delegate-pmdemo
+                  sharedPaths:
+                      - /var/run
               variables:
                   - name: PLUGIN_NO_PUSH
                     type: String
