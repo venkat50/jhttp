@@ -79,8 +79,6 @@ pipeline:
                       spec:
                           connectorRef: account.k8scluster
                           namespace: harness-delegate-pmdemo
-                  sharedPaths:
-                      - /var/run
                   serviceDependencies:
                       - identifier: DIND_service
                         name: DIND service
