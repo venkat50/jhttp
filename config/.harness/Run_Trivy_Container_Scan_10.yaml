@@ -1,0 +1,22 @@
+template:
+    name: Run Trivy Container Scan
+    identifier: Run_Trivy_Container_Scan
+    versionLabel: "1.0"
+    type: Step
+    projectIdentifier: Product_Demos_CIE
+    orgIdentifier: default
+    spec:
+        type: Plugin
+        spec:
+            connectorRef: account.nofar_dockerhub
+            image: plugins/github-actions
+            privileged: true
+            settings:
+                uses: aquasecurity/trivy-action@master
+                with:
+                    image-ref: bluebbb/godemo:latest
+                    format: table
+                    exit-code: "1"
+                    ignore-unfixed: true
+                    vuln-type: os,library
+                    severity: CRITICAL,HIGH
