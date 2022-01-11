@@ -50,7 +50,7 @@ pipeline:
                                     optimize: true
                           - step:
                                 type: Plugin
-                                name: scan container
+                                name: Run Trivy Container Scanning
                                 identifier: scan_container
                                 spec:
                                     connectorRef: account.nofar_dockerhub
