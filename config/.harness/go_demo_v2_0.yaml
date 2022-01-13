@@ -81,7 +81,7 @@ pipeline:
                                 spec:
                                     connectorRef: account.nofar_dockerhub
                                     image: alpine
-                                    command: echo "hello"
+                                    command: echo "hello2"
                   infrastructure:
                       type: KubernetesDirect
                       spec:
