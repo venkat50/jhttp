@@ -74,6 +74,14 @@ pipeline:
                                     image: docker
                                     command: docker images
                                     privileged: true
+                          - step:
+                                type: Run
+                                name: dddd
+                                identifier: dddd
+                                spec:
+                                    connectorRef: account.nofar_dockerhub
+                                    image: alpine
+                                    command: echo "hello"
                   infrastructure:
                       type: KubernetesDirect
                       spec:
