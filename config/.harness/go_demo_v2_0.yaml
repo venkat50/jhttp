@@ -1,5 +1,5 @@
 pipeline:
-    name: go demo v2_0
+    name: go demo v2_0 - DIND
     identifier: go_demo_v2_0
     projectIdentifier: Product_Demos_CIE
     orgIdentifier: default
