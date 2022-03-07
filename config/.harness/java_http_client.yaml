@@ -56,14 +56,21 @@ pipeline:
                                     tags:
                                         - <+pipeline.sequenceId>
                                     optimize: true
+                          - step:
+                                type: Run
+                                name: echo
+                                identifier: echo
+                                spec:
+                                    connectorRef: account.nofar_dockerhub
+                                    image: alpine
+                                    command: echo "hello"
                   infrastructure:
                       type: KubernetesDirect
                       spec:
                           connectorRef: account.k8scluster
                           namespace: harness-delegate-pmdemo
                   sharedPaths:
-                      - ""
-              variables: []
+                      - /additiona/path
         - stage:
               name: Run Integration Test
               identifier: Run_Integration_Test
