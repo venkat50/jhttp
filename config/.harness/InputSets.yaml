@@ -1,0 +1,27 @@
+inputSet:
+  identifier: "InputSets"
+  name: "InputSets"
+  orgIdentifier: "default"
+  projectIdentifier: "Product_Demos_CIE"
+  pipeline:
+    identifier: "basic_piepline"
+    stages:
+    - stage:
+        identifier: "basic"
+        type: "CI"
+        spec:
+          execution:
+            steps:
+            - step:
+                identifier: "echo"
+                type: "Run"
+                spec:
+                  image: "alpine"
+                  privileged: true
+    properties:
+      ci:
+        codebase:
+          build:
+            type: "branch"
+            spec:
+              branch: "main"
