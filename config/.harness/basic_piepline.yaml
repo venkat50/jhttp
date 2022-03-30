@@ -24,14 +24,13 @@ pipeline:
                                 identifier: echo
                                 spec:
                                     connectorRef: account.nofar_dockerhub
-                                    image: alpine
+                                    image: <+input>
                                     command: echo "<+codebase.sourceBranch>"
                                     privileged: <+input>
                                 when:
                                     stageStatus: Success
                                     condition: <+codebase.sourceBranch> != "null"
                                 failureStrategies: []
-              variables: []
     properties:
         ci:
             codebase:
