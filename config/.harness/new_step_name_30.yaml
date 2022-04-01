@@ -12,7 +12,7 @@ template:
         spec:
             connectorRef: account.nofar_dockerhub
             image: alpine
-            command: echo "test2"
+            command: <+input>
             privileged: false
             envVariables:
                 env1: <+input>
