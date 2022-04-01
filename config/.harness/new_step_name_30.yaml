@@ -1,0 +1,18 @@
+template:
+    name: New Step Name
+    identifier: new_step_name
+    versionLabel: "3.0"
+    type: Step
+    projectIdentifier: Product_Demos_CIE
+    orgIdentifier: default
+    tags: {}
+    spec:
+        type: Run
+        description: this is a step that run one integration test
+        spec:
+            connectorRef: account.nofar_dockerhub
+            image: alpine
+            command: echo "test2"
+            privileged: false
+            envVariables:
+                env1: <+input>
