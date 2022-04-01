@@ -31,6 +31,17 @@ pipeline:
                                     stageStatus: Success
                                     condition: <+codebase.sourceBranch> != "null"
                                 failureStrategies: []
+                          - step:
+                                name: zxczxc
+                                identifier: zxczxc
+                                template:
+                                    templateRef: new_step_name
+                                    versionLabel: "3.0"
+                                    templateInputs:
+                                        type: Run
+                                        spec:
+                                            envVariables:
+                                                env1: <+input>
     properties:
         ci:
             codebase:
