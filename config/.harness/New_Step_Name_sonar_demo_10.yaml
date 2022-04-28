@@ -1,0 +1,14 @@
+template:
+    name: New Step Name - sonar demo
+    identifier: New_Step_Name_sonar_demo
+    versionLabel: "1.0"
+    type: Step
+    projectIdentifier: Product_Demos_CIE
+    orgIdentifier: default
+    spec:
+        type: Run
+        spec:
+            connectorRef: account.nofar_dockerhub
+            image: <+input>
+            shell: Sh
+            command: echo "hello"
