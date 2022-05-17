@@ -37,7 +37,7 @@ pipeline:
               identifier: aaa
               type: CI
               spec:
-                  cloneCodebase: true
+                  cloneCodebase: false
                   infrastructure:
                       useFromStage: basic
                   execution:
