@@ -25,12 +25,32 @@ pipeline:
                                 spec:
                                     connectorRef: account.nofar_dockerhub
                                     image: <+input>
-                                    command: echo "<+codebase.sourceBranch>"
+                                    shell: Sh
+                                    command: echo "hey"
                                     privileged: <+input>
                                 when:
                                     stageStatus: Success
                                     condition: <+codebase.sourceBranch> != "null"
                                 failureStrategies: []
+        - stage:
+              name: aaa
+              identifier: aaa
+              type: CI
+              spec:
+                  cloneCodebase: true
+                  infrastructure:
+                      useFromStage: basic
+                  execution:
+                      steps:
+                          - step:
+                                type: Run
+                                name: fail
+                                identifier: fail
+                                spec:
+                                    connectorRef: account.nofar_dockerhub
+                                    image: alpine
+                                    shell: Sh
+                                    command: exit 1
     properties:
         ci:
             codebase:
