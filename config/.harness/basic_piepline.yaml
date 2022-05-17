@@ -24,10 +24,9 @@ pipeline:
                                 identifier: echo
                                 spec:
                                     connectorRef: account.nofar_dockerhub
-                                    image: <+input>
+                                    image: alpine
                                     shell: Sh
                                     command: echo "hey"
-                                    privileged: <+input>
                                 when:
                                     stageStatus: Success
                                     condition: <+codebase.sourceBranch> != "null"
@@ -51,8 +50,3 @@ pipeline:
                                     image: alpine
                                     shell: Sh
                                     command: exit 1
-    properties:
-        ci:
-            codebase:
-                connectorRef: account.Keen_jhttp
-                build: <+input>
