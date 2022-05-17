@@ -10,7 +10,7 @@ pipeline:
               identifier: basic
               type: CI
               spec:
-                  cloneCodebase: true
+                  cloneCodebase: false
                   infrastructure:
                       type: KubernetesDirect
                       spec:
