@@ -27,10 +27,6 @@ pipeline:
                                     image: alpine
                                     shell: Sh
                                     command: echo "hey"
-                                when:
-                                    stageStatus: Success
-                                    condition: <+codebase.sourceBranch> != "null"
-                                failureStrategies: []
         - stage:
               name: aaa
               identifier: aaa
