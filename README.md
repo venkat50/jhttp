@@ -21,7 +21,7 @@ It creates a self-contained, executable JAR in the `target` directory.
     -h,--help                   display help
     -p,--port <PORT>            port to listen (default: 8888)
     -r,--root <DIR>             server root directory (default: '.')
-    -t,--threads <THREADS_NO>   thread pool size (default: 10)
+    -t,--threads <THREADS_NO>   thread pool size (default: 11)
     
 ### Demo
 * [Change background color](src/main/java/io/harness/jhttp/processor/DirectoryListing.java)
