@@ -94,11 +94,11 @@ public class HttpClientTest {
         testRequest("/file2.html", "/http-server/server-root/file2.html");
     }
     
-        
+        //faill
     @Test
     public void testStaticFile2341() throws IOException, InterruptedException {
         Thread.sleep(10000); // sleep 10 sec
-        testRequest("/file1.html", "/http-server/server-root/file1.html");
+        testRequest("/file1.html", "/http-server/server-root/file6.html");
         testRequest("/file2.html", "/http-server/server-root/file2.html");
     }
     
