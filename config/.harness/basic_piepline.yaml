@@ -5,33 +5,6 @@ pipeline:
   orgIdentifier: default
   tags: {}
   stages:
-    - stage:
-        name: basic
-        identifier: basic
-        type: CI
-        spec:
-          cloneCodebase: true
-          execution:
-            steps:
-              - step:
-                  type: Run
-                  name: echo2
-                  identifier: echo
-                  spec:
-                    connectorRef: account.nofar_dockerhub
-                    image: <+input>
-                    shell: Sh
-                    command: echo "<+codebase.sourceBranch>"
-                    privileged: <+input>
-                  when:
-                    stageStatus: Success
-                  failureStrategies: []
-          platform:
-            os: Linux
-            arch: Amd64
-          runtime:
-            type: Cloud
-            spec: {}
     - parallel:
         - stage:
             name: queue test
@@ -67,8 +40,3 @@ pipeline:
                         scope: Stage
                       timeout: 10m
             tags: {}
-  properties:
-    ci:
-      codebase:
-        connectorRef: account.Keen_jhttp
-        build: <+input>
