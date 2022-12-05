@@ -51,7 +51,52 @@ public class ResourceNotFoundTest {
         verify(response).setStatus(404, "File not found");
         assertEquals(readResource("/not-found/not-found.html"), stringWriter.toString());
     }
-
+    
+    @Test
+    public void testRootListing1() throws IOException {
+        assertTrue(new ResourceNotFound().process(request, response));
+        verify(response).setStatus(404, "File not found");
+        assertEquals(readResource("/not-found/not-found.html"), stringWriter.toString());
+    }
+    
+    @Test
+    public void testRootListing2() throws IOException {
+        Thread.sleep(2000);
+        assertTrue(new ResourceNotFound().process(request, response));
+        verify(response).setStatus(404, "File not found");
+        assertEquals(readResource("/not-found/not-found.html"), stringWriter.toString());
+    }
+    
+    @Test
+    public void testRootListing3() throws IOException {
+        Thread.sleep(3000);
+        assertTrue(new ResourceNotFound().process(request, response));
+        verify(response).setStatus(404, "File not found");
+        assertEquals(readResource("/not-found/not-found.html"), stringWriter.toString());
+    }
+    
+    @Test
+    public void testRootListing4() throws IOException {
+        Thread.sleep(4000);
+        assertTrue(new ResourceNotFound().process(request, response));
+        verify(response).setStatus(404, "File not found");
+        assertEquals(readResource("/not-found/not-found.html"), stringWriter.toString());
+    }    
+    
+    @Test
+    public void testRootListing5() throws IOException {
+        Thread.sleep(9000);
+        assertTrue(new ResourceNotFound().process(request, response));
+        verify(response).setStatus(404, "File not found");
+        assertEquals(readResource("/not-found/not-found.html"), stringWriter.toString());
+    }    
+    @Test
+    public void testRootListing6() throws IOException {
+        Thread.sleep(7000);
+        assertTrue(new ResourceNotFound().process(request, response));
+        verify(response).setStatus(404, "File not found");
+        assertEquals(readResource("/not-found/not-found.html"), stringWriter.toString());
+    }
     private String readResource(String filename) throws IOException {
         return IOUtils.toString(this.getClass().getResourceAsStream(filename));
     }
