@@ -1,7 +1,7 @@
 connector:
   name: org git connector keen
   identifier: BS1223
-  description:
+  description: ""
   orgIdentifier: default
   projectIdentifier: Product_Demos_CIE
   type: Github
@@ -19,4 +19,5 @@ connector:
       type: Token
       spec:
         tokenRef: account.nofar_github_token
+    executeOnDelegate: false
     type: Account
