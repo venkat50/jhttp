@@ -44,4 +44,10 @@ public class StaticFileTest {
         assertEquals(new String(expected.toByteArray()), new String(responseOutput.toByteArray()));
     }
 
+    @Test
+    @Test
+    public void testDemo() throws IOException, URISyntaxException {
+        assertTrue(true);
+    }
+
 }
