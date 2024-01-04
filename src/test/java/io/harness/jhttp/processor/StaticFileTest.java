@@ -47,6 +47,7 @@ public class StaticFileTest {
     @Test
     public void testDemo() throws IOException, URISyntaxException {
         assertTrue(true);
+        
     }
 
 }
