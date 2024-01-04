@@ -43,5 +43,10 @@ public class StaticFileTest {
         Files.copy(Paths.get(STATIC_FILE.toURI()), expected);
         assertEquals(new String(expected.toByteArray()), new String(responseOutput.toByteArray()));
     }
+    
+    @Test
+    public void testDemo() throws IOException, URISyntaxException {
+        assertTrue(true);
+    }
 
 }
