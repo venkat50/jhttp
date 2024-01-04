@@ -46,6 +46,7 @@ public class StaticFileTest {
     
     @Test
     public void testDemo() throws IOException, URISyntaxException {
+        //private String msg = "Hello";
         assertTrue(true);
         
     }
